@@ -1,0 +1,159 @@
+libgc
+------------------------------------------
+The Boehm-Demers-Weiser conservative garbage collector can be used as a
+garbage collecting replacement for C malloc or C++ new. It allows you to
+allocate memory basically as you normally would, without explicitly
+deallocating memory that is no longer useful. The collector
+automatically recycles memory when it determines that it can no longer
+be otherwise accessed.
+
+The collector is also used by a number of programming language
+implementations that either use C as intermediate code, want to
+facilitate easier interoperation with C libraries, or just prefer the
+simple collector interface.
+
+Alternatively, the garbage collector may be used as a leak detector for
+C or C++ programs, though that is not its primary goal. 
+
+Runtime requirements:
+  cygwin-1.5.19-4
+
+Build requirements:
+  cygwin-1.5.19-4
+  autoconf2.5-2.59-3
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  gawk-3.1.5-2
+  gcc-core-3.4.4-1
+  gcc-g++-3.4.4-1
+  libtool1.5-1.5.20-2
+  make-3.80-1
+  sed-4.1.4-1
+
+Canonical website:
+  http://www.hpl.hp.com/personal/Hans_Boehm/gc/
+
+Canonical download:
+  http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
+
+-------------------------------------------
+
+Build instructions:
+  unpack libgc-6.7-1-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  ./gc-6.7-1.sh all
+
+This will create:
+  /usr/src/libgc-6.7-1-src.tar.bz2
+  /usr/src/libgc-6.7-1.tar.bz2
+  /usr/src/libgc1-6.7-1.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/include/gc/cord.h
+  /usr/include/gc/ec.h
+  /usr/include/gc/gc.h
+  /usr/include/gc/gc_alloc.h
+  /usr/include/gc/gc_allocator.h
+  /usr/include/gc/gc_amiga_redirects.h
+  /usr/include/gc/gc_backptr.h
+  /usr/include/gc/gc_config_macros.h
+  /usr/include/gc/gc_cpp.h
+  /usr/include/gc/gc_gcj.h
+  /usr/include/gc/gc_inl.h
+  /usr/include/gc/gc_inline.h
+  /usr/include/gc/gc_local_alloc.h
+  /usr/include/gc/gc_mark.h
+  /usr/include/gc/gc_pthread_redirects.h
+  /usr/include/gc/gc_typed.h
+  /usr/include/gc/javaxfc.h
+  /usr/include/gc/leak_detector.h
+  /usr/include/gc/new_gc_alloc.h
+  /usr/include/gc/private/cord_pos.h
+  /usr/include/gc/private/darwin_semaphore.h
+  /usr/include/gc/private/darwin_stop_world.h
+  /usr/include/gc/private/dbg_mlc.h
+  /usr/include/gc/private/gcconfig.h
+  /usr/include/gc/private/gc_hdrs.h
+  /usr/include/gc/private/gc_locks.h
+  /usr/include/gc/private/gc_pmark.h
+  /usr/include/gc/private/gc_priv.h
+  /usr/include/gc/private/pthread_stop_world.h
+  /usr/include/gc/private/pthread_support.h
+  /usr/include/gc/private/solaris_threads.h
+  /usr/include/gc/private/specific.h
+  /usr/include/gc/weakpointer.h
+  /usr/include/gc.h
+  /usr/include/gc_allocator.h
+  /usr/include/gc_config_macros.h
+  /usr/include/gc_cpp.h
+  /usr/include/gc_local_alloc.h
+  /usr/include/gc_pthread_redirects.h
+  /usr/include/gc_typed.h
+  /usr/include/leak_detector.h
+  /usr/lib/libgc.a
+  /usr/lib/libgc.dll.a
+  /usr/lib/libgc.la
+  /usr/lib/libgccpp.a
+  /usr/lib/libgccpp.dll.a
+  /usr/lib/libgccpp.la
+  /usr/share/doc/Cygwin/libgc-6.7.README
+  /usr/share/doc/libgc-6.7/barrett_diagram
+  /usr/share/doc/libgc-6.7/html/debugging.html
+  /usr/share/doc/libgc-6.7/html/gcdescr.html
+  /usr/share/doc/libgc-6.7/html/gcinterface.html
+  /usr/share/doc/libgc-6.7/html/leak.html
+  /usr/share/doc/libgc-6.7/html/scale.html
+  /usr/share/doc/libgc-6.7/html/simple_example.html
+  /usr/share/doc/libgc-6.7/html/tree.html
+  /usr/share/doc/libgc-6.7/README
+  /usr/share/doc/libgc-6.7/README.amiga
+  /usr/share/doc/libgc-6.7/README.arm.cross
+  /usr/share/doc/libgc-6.7/README.autoconf
+  /usr/share/doc/libgc-6.7/README.changes
+  /usr/share/doc/libgc-6.7/README.contributors
+  /usr/share/doc/libgc-6.7/README.cords
+  /usr/share/doc/libgc-6.7/README.darwin
+  /usr/share/doc/libgc-6.7/README.DGUX386
+  /usr/share/doc/libgc-6.7/README.dj
+  /usr/share/doc/libgc-6.7/README.environment
+  /usr/share/doc/libgc-6.7/README.ews4800
+  /usr/share/doc/libgc-6.7/README.hp
+  /usr/share/doc/libgc-6.7/README.linux
+  /usr/share/doc/libgc-6.7/README.Mac
+  /usr/share/doc/libgc-6.7/README.MacOSX
+  /usr/share/doc/libgc-6.7/README.macros
+  /usr/share/doc/libgc-6.7/README.OS2
+  /usr/share/doc/libgc-6.7/README.QUICK
+  /usr/share/doc/libgc-6.7/README.rs6000
+  /usr/share/doc/libgc-6.7/README.sgi
+  /usr/share/doc/libgc-6.7/README.solaris2
+  /usr/share/doc/libgc-6.7/README.uts
+  /usr/share/doc/libgc-6.7/README.win32
+  /usr/share/man/man3/GC_malloc.3.gz
+
+Files included in the libgc1 package:
+
+  /usr/bin/cyggc-1.dll
+  /usr/bin/cyggccpp-1.dll
+
+------------------
+
+Port Notes:
+
+----- version 6.7-1 -----
+Version bump.
+
+----- version 6.6-1 -----
+Version bump.
+
+----- version 6.5-1 -----
+Update for Cygwin; last release in the distro was 6.4-1.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
