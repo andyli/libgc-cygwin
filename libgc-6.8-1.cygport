@@ -1,0 +1,31 @@
+DESCRIPTION="Boehm-Demers-Weiser garbage collector library"
+HOMEPAGE="http://www.hpl.hp.com/personal/Hans_Boehm/gc/"
+SRC_URI="${HOMEPAGE}/gc_source/gc${PV}.tar.gz"
+SRC_DIR="gc${PV}"
+
+PKG_NAMES="${PN} ${PN}1"
+PKG_HINTS="setup runtime"
+PKG_CONTENTS[0]='--exclude=*.dll usr/'
+PKG_CONTENTS[1]='usr/bin/*.dll'
+
+CYGCONF_ARGS="--enable-cplusplus --enable-threads=pthreads"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dodoc ${S}/README.QUICK
+
+	insinto /usr/include/gc
+	doins ${S}/include/{cord.h,ec.h,javaxfc.h}
+
+	insinto /usr/include/gc/private
+	doins ${S}/include/private/*.h
+
+	cd ${D}/usr/share
+	dodir /usr/share/doc/${P}/html /usr/share/man/man3
+	mv gc/*.html doc/${P}/html
+	mv gc/gc.man man/man3/GC_malloc.3
+	mv gc/* doc/${P}
+	rmdir gc
+}

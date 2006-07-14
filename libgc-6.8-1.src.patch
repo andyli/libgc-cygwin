@@ -1,0 +1,44 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x 'Makefile.in*' -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/gc6.8/Makefile.am src/gc6.8/Makefile.am
+--- origsrc/gc6.8/Makefile.am	2006-02-18 18:50:37.000000000 -0600
++++ src/gc6.8/Makefile.am	2006-07-14 15:09:25.319000000 -0500
+@@ -57,7 +57,7 @@
+ # linuxthread semaphore functions get linked:
+ libgc_la_LIBADD = @addobjs@ $(THREADDLLIBS) $(UNWINDLIBS)
+ libgc_la_DEPENDENCIES = @addobjs@
+-libgc_la_LDFLAGS = -version-info 1:2:0
++libgc_la_LDFLAGS = -version-info 1:2:0 -no-undefined
+ 
+ EXTRA_libgc_la_SOURCES = alpha_mach_dep.S \
+     mips_sgi_mach_dep.s mips_ultrix_mach_dep.s powerpc_darwin_mach_dep.s \
+@@ -65,8 +65,8 @@
+     sparc_sunos4_mach_dep.s ia64_save_regs_in_stack.s
+ 
+ libgccpp_la_SOURCES = gc_cpp.cc
+-libgccpp_la_LIBADD = $(THREADDLLIBS) $(UNWINDLIBS)
+-libgccpp_la_LDFLAGS = -version-info 1:2:0
++libgccpp_la_LIBADD = libgc.la $(THREADDLLIBS) $(UNWINDLIBS)
++libgccpp_la_LDFLAGS = -version-info 1:2:0 -no-undefined
+ 
+ EXTRA_DIST += alpha_mach_dep.S mips_sgi_mach_dep.s sparc_mach_dep.S
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x 'Makefile.in*' -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/gc6.8/acinclude.m4 src/gc6.8/acinclude.m4
+--- origsrc/gc6.8/acinclude.m4	2003-06-21 17:38:54.000000000 -0500
++++ src/gc6.8/acinclude.m4	2006-07-14 15:09:25.334625000 -0500
+@@ -45,5 +45,3 @@
+   AC_MSG_RESULT(major=$GC_VERSION_MAJOR minor=$GC_VERSION_MINOR \
+ ${GC_ALPHA_VERSION:+alpha=}$GC_ALPHA_VERSION)
+ ])
+-
+-sinclude(libtool.m4)
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x 'Makefile.in*' -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/gc6.8/configure.in src/gc6.8/configure.in
+--- origsrc/gc6.8/configure.in	2006-06-07 00:01:52.000000000 -0500
++++ src/gc6.8/configure.in	2006-07-14 15:09:25.334625000 -0500
+@@ -142,6 +142,8 @@
+ 	;;
+      *-*-cygwin*)
+ 	AC_DEFINE(GC_WIN32_THREADS)
++	AC_DEFINE(_REENTRANT)
++	THREADDLLIBS="-lpthread"
+ 	;;
+      *-*-darwin*)
+ 	AC_DEFINE(GC_DARWIN_THREADS)

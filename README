@@ -16,19 +16,19 @@ Alternatively, the garbage collector may be used as a leak detector for
 C or C++ programs, though that is not its primary goal. 
 
 Runtime requirements:
-  cygwin-1.5.19-4
+  cygwin-1.5.20-1
 
 Build requirements:
-  cygwin-1.5.19-4
-  autoconf2.5-2.59-3
+  cygwin-1.5.20-1
+  autoconf2.5-2.59-2
   automake1.9-1.9.6-1
   binutils-20050610-1
   gawk-3.1.5-2
   gcc-core-3.4.4-1
   gcc-g++-3.4.4-1
-  libtool1.5-1.5.20-2
+  libtool1.5-1.5.22-1
   make-3.80-1
-  sed-4.1.4-1
+  sed-4.1.5-1
 
 Canonical website:
   http://www.hpl.hp.com/personal/Hans_Boehm/gc/
@@ -39,16 +39,16 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack libgc-6.7-1-src.tar.bz2
+  unpack libgc-6.8-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  ./gc-6.7-1.sh all
+  cygport ./libgc-6.8-X.cygport all
 
 This will create:
-  /usr/src/libgc-6.7-1-src.tar.bz2
-  /usr/src/libgc-6.7-1.tar.bz2
-  /usr/src/libgc1-6.7-1.tar.bz2
+  /usr/src/libgc-6.8-X-src.tar.bz2
+  /usr/src/libgc-6.8-X.tar.bz2
+  /usr/src/libgc1-6.8-X.tar.bz2
 
 -------------------------------------------
 
@@ -102,14 +102,6 @@ Files included in the binary package:
   /usr/lib/libgccpp.dll.a
   /usr/lib/libgccpp.la
   /usr/share/doc/Cygwin/libgc-6.7.README
-  /usr/share/doc/libgc-6.7/barrett_diagram
-  /usr/share/doc/libgc-6.7/html/debugging.html
-  /usr/share/doc/libgc-6.7/html/gcdescr.html
-  /usr/share/doc/libgc-6.7/html/gcinterface.html
-  /usr/share/doc/libgc-6.7/html/leak.html
-  /usr/share/doc/libgc-6.7/html/scale.html
-  /usr/share/doc/libgc-6.7/html/simple_example.html
-  /usr/share/doc/libgc-6.7/html/tree.html
   /usr/share/doc/libgc-6.7/README
   /usr/share/doc/libgc-6.7/README.amiga
   /usr/share/doc/libgc-6.7/README.arm.cross
@@ -134,6 +126,14 @@ Files included in the binary package:
   /usr/share/doc/libgc-6.7/README.solaris2
   /usr/share/doc/libgc-6.7/README.uts
   /usr/share/doc/libgc-6.7/README.win32
+  /usr/share/doc/libgc-6.7/barrett_diagram
+  /usr/share/doc/libgc-6.7/html/debugging.html
+  /usr/share/doc/libgc-6.7/html/gcdescr.html
+  /usr/share/doc/libgc-6.7/html/gcinterface.html
+  /usr/share/doc/libgc-6.7/html/leak.html
+  /usr/share/doc/libgc-6.7/html/scale.html
+  /usr/share/doc/libgc-6.7/html/simple_example.html
+  /usr/share/doc/libgc-6.7/html/tree.html
   /usr/share/man/man3/GC_malloc.3.gz
 
 Files included in the libgc1 package:
@@ -144,6 +144,9 @@ Files included in the libgc1 package:
 ------------------
 
 Port Notes:
+
+----- version 6.8-1 -----
+Version bump, built with cygport.
 
 ----- version 6.7-1 -----
 Version bump.
