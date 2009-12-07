@@ -1,7 +1,9 @@
 DESCRIPTION="Boehm-Demers-Weiser garbage collector library"
 HOMEPAGE="http://www.hpl.hp.com/personal/Hans_Boehm/gc/"
-SRC_URI="${HOMEPAGE}/gc_source/gc${PV}.tar.gz"
-SRC_DIR="gc${PV}"
+SRC_URI="${HOMEPAGE}/gc_source/gc-${PV}.tar.gz"
+SRC_DIR="gc-${PV}"
+
+PATCH_URI="7.1-libtool22.patch"
 
 PKG_NAMES="${PN} ${PN}1"
 PKG_HINTS="setup runtime"
@@ -23,9 +25,9 @@ src_install() {
 	doins ${S}/include/private/*.h
 
 	cd ${D}/usr/share
-	dodir /usr/share/doc/${P}/html /usr/share/man/man3
-	mv gc/*.html doc/${P}/html
+	dodir /usr/share/doc/${PN}/html /usr/share/man/man3
+	mv gc/*.html doc/${PN}/html
 	mv gc/gc.man man/man3/GC_malloc.3
-	mv gc/* doc/${P}
+	mv gc/* doc/${PN}
 	rmdir gc
 }
