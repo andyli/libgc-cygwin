@@ -5,10 +5,11 @@ SRC_DIR="gc-${PV}"
 
 PATCH_URI="7.1-libtool22.patch"
 
-PKG_NAMES="${PN} ${PN}1"
-PKG_HINTS="setup runtime"
-PKG_CONTENTS[0]='--exclude=*.dll usr/'
-PKG_CONTENTS[1]='usr/bin/*.dll'
+PKG_NAMES="${PN} ${PN}1 ${PN}-devel"
+libgc1_CONTENTS='usr/bin/*-1.dll'
+libgc_devel_CONTENTS="usr/include/ usr/lib/ usr/share/"
+
+DIFF_EXCLUDES="*.pc"
 
 CYGCONF_ARGS="--enable-cplusplus --enable-threads=pthreads"
 
