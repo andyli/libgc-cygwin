@@ -1,7 +1,0 @@
---- origsrc/gc-7.1/acinclude.m4	2005-10-10 17:33:34.000000000 -0500
-+++ src/gc-7.1/acinclude.m4	2009-12-06 13:32:55.852588200 -0600
-@@ -46,4 +46,3 @@ AC_DEFUN(GC_SET_VERSION, [
- ${GC_ALPHA_VERSION:+alpha=}$GC_ALPHA_VERSION)
- ])
- 
--sinclude(libtool.m4)
