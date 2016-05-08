@@ -1,6 +1,6 @@
 NAME="libgc"
-VERSION=7.2c
-RELEASE=1
+VERSION=7.2d
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Boehm-Demers-Weiser garbage collector library"
 DESCRIPTION="The Boehm-Demers-Weiser conservative garbage collector can be
