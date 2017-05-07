@@ -1,0 +1,3 @@
+libgc-*.i686/
+libgc-*.x86_64/
+gc-*.tar.gz
