@@ -17,9 +17,7 @@ SRC_DIR="gc-${VERSION}"
 # https://github.com/ivmai/bdwgc/pull/161
 PATCH_URI="https://patch-diff.githubusercontent.com/raw/ivmai/bdwgc/pull/161.patch"
 
-DEPEND="
-    libatomic_ops-devel
-"
+DEPEND="pkgconfig(atomic_ops)"
 
 PKG_NAMES="libgc1 libgc-devel"
 libgc1_CONTENTS="
