@@ -12,6 +12,11 @@ be otherwise accessed."
 HOMEPAGE="http://www.hboehm.info/gc"
 SRC_URI="${HOMEPAGE}/gc_source/gc-${VERSION}.tar.gz"
 SRC_DIR="gc-${VERSION}"
+
+# docs should be installed to /usr/share/doc
+# https://github.com/ivmai/bdwgc/pull/161
+PATCH_URI="https://patch-diff.githubusercontent.com/raw/ivmai/bdwgc/pull/161.patch"
+
 DEPEND="
     libatomic_ops-devel
 "
