@@ -20,7 +20,7 @@ PKG_NAMES="libgc1 libgc-devel"
 libgc_devel_OBSOLETES="libgc"
 
 libgc1_CONTENTS="
-    usr/bin/*-1.dll
+    usr/bin/*.dll
 "
 libgc_devel_CONTENTS="
     usr/include/
