@@ -13,6 +13,9 @@ HOMEPAGE="http://www.hboehm.info/gc"
 SRC_URI="${HOMEPAGE}/gc_source/gc-${VERSION}.tar.gz"
 SRC_DIR="gc-${VERSION}"
 
+# https://github.com/andyli/libgc-cygwin/issues/1
+PATCH_URI="https://github.com/ivmai/bdwgc/commit/3150107d3e12b06764e3fd4598cef0652e127b3c.patch"
+
 DEPEND="pkgconfig(atomic_ops)"
 
 PKG_NAMES="libgc1 libgc-devel"
