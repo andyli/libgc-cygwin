@@ -23,6 +23,9 @@ PKG_NAMES="libgc1 libgccpp1 libcord1 libgc-devel"
 
 libgc_devel_OBSOLETES="libgc"
 
+# old libgc1 packages contain cyggccpp-1.dll and cygcord-1.dll
+libgc1_REQUIRES="libgccpp1 libcord1"
+
 libgc1_CONTENTS="usr/bin/cyggc-1.dll"
 libgccpp1_CONTENTS="usr/bin/cyggccpp-1.dll"
 libcord1_CONTENTS="usr/bin/cygcord-1.dll"
