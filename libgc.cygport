@@ -1,6 +1,6 @@
 NAME="libgc"
 VERSION=7.6.0
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Boehm-Demers-Weiser garbage collector library"
 DESCRIPTION="The Boehm-Demers-Weiser conservative garbage collector can be
@@ -19,13 +19,14 @@ PATCH_URI="https://patch-diff.githubusercontent.com/raw/ivmai/bdwgc/pull/161.pat
 
 DEPEND="pkgconfig(atomic_ops)"
 
-PKG_NAMES="libgc1 libgc-devel"
+PKG_NAMES="libgc1 libgccpp1 libcord1 libgc-devel"
 
 libgc_devel_OBSOLETES="libgc"
 
-libgc1_CONTENTS="
-    usr/bin/*-1.dll
-"
+libgc1_CONTENTS="usr/bin/cyggc-1.dll"
+libgccpp1_CONTENTS="usr/bin/cyggccpp-1.dll"
+libcord1_CONTENTS="usr/bin/cygcord-1.dll"
+
 libgc_devel_CONTENTS="
     usr/include/
     usr/lib/
