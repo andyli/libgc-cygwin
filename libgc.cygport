@@ -27,6 +27,7 @@ libgc_devel_CONTENTS="
     usr/include/
     usr/lib/
     usr/share/doc/libgc/
+    usr/share/man
 "
 
 CYGCONF_ARGS="--enable-cplusplus --enable-threads=pthreads --with-libatomic-ops=yes --enable-handle-fork"
