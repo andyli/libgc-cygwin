@@ -12,6 +12,7 @@ be otherwise accessed."
 HOMEPAGE="http://www.hboehm.info/gc"
 SRC_URI="https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/gc-${VERSION}.tar.gz"
 SRC_DIR="gc-${VERSION}"
+PATCH_URI="gc_cpp_delete.patch"
 
 DEPEND="pkgconfig(atomic_ops)"
 
