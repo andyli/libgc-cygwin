@@ -1,5 +1,5 @@
 NAME="libgc"
-VERSION=7.6.8
+VERSION=7.6.10
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Boehm-Demers-Weiser garbage collector library"
@@ -12,7 +12,6 @@ be otherwise accessed."
 HOMEPAGE="http://www.hboehm.info/gc"
 SRC_URI="https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/gc-${VERSION}.tar.gz"
 SRC_DIR="gc-${VERSION}"
-PATCH_URI="gc_cpp_delete.patch"
 
 DEPEND="pkgconfig(atomic_ops)"
 
