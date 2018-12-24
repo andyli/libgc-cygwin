@@ -1,5 +1,5 @@
 NAME="libgc"
-VERSION=7.6.10
+VERSION=8.0.2
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Boehm-Demers-Weiser garbage collector library"
@@ -12,8 +12,6 @@ be otherwise accessed."
 HOMEPAGE="http://www.hboehm.info/gc"
 SRC_URI="https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/gc-${VERSION}.tar.gz"
 SRC_DIR="gc-${VERSION}"
-
-DEPEND="pkgconfig(atomic_ops)"
 
 PKG_NAMES="libgc1 libgccpp1 libcord1 libgc-devel"
 
@@ -30,4 +28,4 @@ libgc_devel_CONTENTS="
     usr/share/man
 "
 
-CYGCONF_ARGS="--enable-cplusplus --enable-threads=pthreads --with-libatomic-ops=yes --enable-handle-fork"
+CYGCONF_ARGS="--enable-cplusplus"
