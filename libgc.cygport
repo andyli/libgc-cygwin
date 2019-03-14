@@ -1,5 +1,5 @@
 NAME="libgc"
-VERSION=7.6.10
+VERSION=7.6.12
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Boehm-Demers-Weiser garbage collector library"
