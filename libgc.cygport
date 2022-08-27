@@ -1,5 +1,5 @@
 NAME="libgc"
-VERSION=8.0.6
+VERSION=8.2.2
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Boehm-Demers-Weiser garbage collector library"
@@ -18,7 +18,12 @@ PKG_NAMES="libgc1 libgccpp1 libcord1 libgc-devel"
 libgc_devel_OBSOLETES="libgc"
 
 libgc1_CONTENTS="usr/bin/cyggc-1.dll"
-libgccpp1_CONTENTS="usr/bin/cyggccpp-1.dll"
+
+libgccpp1_CONTENTS="
+    usr/bin/cyggccpp-1.dll
+    usr/bin/cyggctba-1.dll
+"
+
 libcord1_CONTENTS="usr/bin/cygcord-1.dll"
 
 libgc_devel_CONTENTS="
