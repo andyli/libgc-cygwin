@@ -1,5 +1,5 @@
 NAME="libgc"
-VERSION=8.2.2
+VERSION=8.2.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Boehm-Demers-Weiser garbage collector library"
@@ -9,7 +9,7 @@ allows you to allocate memory basically as you normally would, without
 explicitly deallocating memory that is no longer useful. The collector
 automatically recycles memory when it determines that it can no longer
 be otherwise accessed."
-HOMEPAGE="http://www.hboehm.info/gc"
+HOMEPAGE="https://www.hboehm.info/gc"
 SRC_URI="https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/gc-${VERSION}.tar.gz"
 SRC_DIR="gc-${VERSION}"
 
