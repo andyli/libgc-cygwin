@@ -12,6 +12,7 @@ be otherwise accessed."
 HOMEPAGE="https://www.hboehm.info/gc"
 SRC_URI="https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/gc-${VERSION}.tar.gz"
 SRC_DIR="gc-${VERSION}"
+LICENSE="MIT"
 
 PKG_NAMES="libgc1 libgccpp1 libcord1 libgc-devel"
 
